@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="/day1/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🏋️‍♂️ CHECKOUT</div>
+      <div class="login-section">
+        <span>Have An Account?</span> 
+        <button class="login-btn">LOGIN</button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="left-section">
+        <h2>Shipping</h2>
+        <form class="shipping-form">
+          <div class="row">
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+          </div>
+          <input type="text" placeholder="Street Address" required />
+          <input type="text" placeholder="Apt / Suite / Unit (Optional)" />
+          <div class="row">
+            <input type="text" placeholder="City" required />
+            <select>
+            <option>select the option </option>
+              <option>chennai</option>
+              <option>madurai</option>
+              <option>Erode</option>
+              <option>Tiruchengode</option>
+              <option>salem</option>
+              <option>cbe</option>
+              <option>namakkal</option>
+              <option>tirupure</option>
+            </select>
+          </div>
+          <input type="text" placeholder="Postal Code" required />
+
+          <div class="shipping-method">
+            <p><strong>Shipping Method</strong></p>
+            <p>Enter a shipping address to see accurate shipping options for your order.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="right-section">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <p>Subtotal: <span>$37.49 CDN</span></p>
+          <p>Taxes: <span>—</span></p>
+          <p>Shipping (1 item): <span>—</span></p>
+          <hr />
+          <p class="total">Total: <span>$37.49 CDN</span></p>
+          
+          <div class="promo-code-box">
+            <p>Apply a Promo Code or Discount (one per order)</p>
+            <input type="text" placeholder="Promo Code" />
+            <button class="apply-btn">Apply</button>
+          </div>
+
+          <div class="badges">
+            <button class="badge red">Troop</button>
+            <button class="badge blue">ID</button>
+            <button class="badge blue">Responder</button>
+            <button class="badge blue">ID</button>
+          </div>
+        </div>
+
+        <div class="bag-summary">
+          <h3>Bag Summary</h3>
+          <p class="arrival">Arrives in 4-7 days</p>
+          <div class="product">
+            <img src="/day1/src/rename/portrait-1236732_1280.jpg" alt="Hoodie" />
+            <div class="product-info">
+              <p><strong>Men's UA Hustle Fleece Hoodie</strong></p>
+              <p>1300713-025</p>
+              <p>True Gray Heather / XXL</p>
+              <p><del>$44.99</del> <strong>$37.49 CDN</strong></p>
+              <a href="#">Edit</a> | <a href="#">Remove</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

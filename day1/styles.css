@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .login-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .left-section {
+    flex: 2;
+  }
+  
+  .right-section {
+    flex: 1;
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+  }
+  
+  
+  .shipping-form input,
+  .shipping-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .row {
+    display:flex;
+    gap: 20px;
+  }
+  
+  .order-summary,
+  .bag-summary {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .order-summary p,
+  .order-summary h3 {
+    margin: 8px 0;
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+  
+  .promo-code-box {
+    margin-top: 20px;
+  }
+  
+  .promo-code-box input {
+    width: 60%;
+    padding: 8px;
+    margin-top: 10px;
+  }
+  
+  .apply-btn {
+    padding: 8px 12px;
+    margin-left: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+  }
+  
+  .badges {
+    margin-top: 10px;
+  }
+  
+  .badge {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .badge.red {
+    background-color: #cc0000;
+  }
+  
+  .badge.blue {
+    background-color: #0033cc;
+  }
+  
+  .product {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .product img {
+    width: 80px;
+  }
+  
+  .product-info {
+    font-size: 14px;
+  }
+  
+  .arrival {
+    font-size: 12px;
+    color: green;
+  }
+  
