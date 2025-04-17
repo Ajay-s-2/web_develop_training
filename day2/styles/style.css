@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds spacing between the logo and the shop name */
+}
+
+.shop-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.auth-buttons .btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff5722;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.auth-buttons .btn.secondary {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 50%;
+    flex: 1;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero-content h1 span {
+    color: #ff5722;
+}
+
+.hero-buttons {
+    margin-top: 1rem;
+}
+
+.hero-buttons .btn {
+    margin-right: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff5722;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero-buttons .btn.secondary {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    
+}
+
+.hero-image img {
+    width: 90%;
+    border-radius: 10px;
+    height: 30%;
+}
+
+.popular-items {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.popular-items h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.item {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 300px;
+}
+
+.item img {
+    max-width: 70%;
+    border-radius: 5px;
+}
+
+
+.item h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.item p {
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+.item .btn {
+    padding: 0.5rem 1rem;
+    background-color: #ff5722;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
