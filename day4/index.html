@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BuyMore Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <input type="checkbox" id="menu-toggle">
+
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>Buy<span>More</span></h2>
+      <nav>
+        <a href="#">Popular Products</a>
+        <a href="#" class="active">Explore New</a>
+        <a href="#">Clothing and Shoes</a>
+        <a href="#">Gifts and Living</a>
+        <a href="#">Inspiration</a>
+      </nav>
+      <div class="buttons">
+        <button>+ Request Product</button>
+        <button>+ Add Member</button>
+      </div>
+      <div class="orders">
+        <h4>Last Orders (37)</h4>
+        <p>DXC Nike... <span>view order</span></p>
+        <p>Outerwear... <span>view order</span></p>
+      </div>
+      <button class="logout">Log out</button>
+    </div>
+
+    <div class="main">
+      <header>
+        <label for="menu-toggle" class="menu-btn">☰</label>
+        <div class="header-left">
+          <h2>37 Orders</h2>
+          <p>Last 7 Days</p>
+        </div>
+        <div class="header-center">
+          <button>Dashboard</button>
+          <button>Website</button>
+          <button>All</button>
+          <button>Men</button>
+          <button>Women</button>
+        </div>
+        <div class="header-right">
+          <span>🛒 +8</span>
+          <img src="https://i.pravatar.cc/40" alt="User">
+          <strong>Ryana</strong>
+        </div>
+      </header>
+
+      <section class="explore">
+        <div class="filters">
+          <button class="active-filter">All</button>
+          <button>Men</button>
+          <button>Women</button>
+          <input type="text" placeholder="Search products...">
+        </div>
+
+        <div class="grid">
+          <div class="card highlight">
+            <h3>GET UP TO 50% OFF</h3>
+            <button>Get Discount</button>
+          </div>
+          <div class="card promo">
+            <h3>Winter Weekend</h3>
+            <p>Keep it cozy</p>
+          </div>
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Zebra sandal">
+            <h3>Zebra Sandals</h3>
+            <p>$36</p>
+          </div>
+          <div class="card">
+            <img src="https://via.placeholder.com/150" alt="Jogger">
+            <h3>Skinny Jogger</h3>
+            <p>$89</p>
+          </div>
+          <div class="card cta">
+            <h3>Favorite Styles</h3>
+            <button>See All</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+</body>
+</html>
