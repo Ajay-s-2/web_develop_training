@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPROUT - Checkout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #333;
+            display: grid;
+            grid-template-columns: 2fr 1fr; 
+            gap: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #2e7d32;
+            grid-column: span 2; 
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: grid;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form-row.grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px;
+        }
+
+        .form-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+        .price-row.total {
+            font-weight: 500;
+            font-size: 16px;
+            margin-top: 12px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .purchase-btn {
+            width: 100%;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .order-summary {
+            background-color: white;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            display: grid;
+            gap: 15px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>SPROUT</h1>
+
+   
+    <div>
+        <div class="section">
+            <h2>Checkout</h2>
+            <h3>Personal information:</h3>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">First name</span>
+                    <input type="text" class="form-input">
+                </div>
+                <div>
+                    <span class="form-label">Last name</span>
+                    <input type="text" class="form-input">
+                </div>
+            </div>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">Phone</span>
+                    <input type="tel" class="form-input">
+                </div>
+                <div>
+                    <span class="form-label">Email</span>
+                    <input type="email" class="form-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Delivery details:</h3>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">Country / Region</span>
+                    <select class="form-select">
+                        <option>United Kingdom (UK)</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="form-label">Town / City</span>
+                    <input type="text" class="form-input">
+                </div>
+            </div>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">Street</span>
+                    <input type="text" class="form-input">
+                </div>
+                <div>
+                    <span class="form-label">Postcode</span>
+                    <input type="text" class="form-input">
+                </div>
+            </div>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">Packaging type</span>
+                    <select class="form-select">
+                        <option>Without plastic</option>
+                    </select>
+                </div>
+                <div>
+                    <span class="form-label">Shipping option</span>
+                    <select class="form-select">
+                        <option>By courier</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Payment:</h3>
+            <div class="radio-option">
+                <input type="radio" name="payment" checked>
+                <span>Apple Pay</span>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="payment">
+                <span>Pay Pal</span>
+            </div>
+            <div class="radio-option">
+                <input type="radio" name="payment">
+                <span>Credit or debit card</span>
+            </div>
+            <div class="form-row">
+                <span class="form-label">Card number</span>
+                <input type="text" class="form-input" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-row grid-2">
+                <div>
+                    <span class="form-label">Expiration date</span>
+                    <input type="text" class="form-input" placeholder="MM/YY">
+                </div>
+                <div>
+                    <span class="form-label">CVV code</span>
+                    <input type="text" class="form-input" placeholder="123">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-summary">
+        <h3>Your order:</h3>
+        <div class="price-row">
+            <span>Subtotal:</span>
+            <span>$60.30</span>
+        </div>
+        <div class="price-row">
+            <span>Delivery:</span>
+            <span>$8.20</span>
+        </div>
+        <div class="divider"></div>
+        <div class="price-row total">
+            <span>Total:</span>
+            <span>$68.50</span>
+        </div>
+        <button class="purchase-btn">Purchase</button>
+        <div class="divider"></div>
+        <div class="order-item">
+            <span>Jerky persimmon</span>
+            <span class="quantity">1 kg + $8.60</span>
+        </div>
+        <div class="order-item">
+            <span>Macadamia in the shell</span>
+            <span class="quantity">2 kg + $28.00</span>
+        </div>
+        <div class="order-item">
+            <span>Spiced nuts</span>
+            <span class="quantity">500g + $7.20</span>
+        </div>
+        <div class="order-item">
+            <span>Banana</span>
+            <span class="quantity">4 kg + $5.70</span>
+        </div>
+        <div class="order-item">
+            <span>Premium lowfruit</span>
+            <span class="quantity">1 kg + $4.00</span>
+        </div>
+        <div class="order-item">
+            <span>Orange</span>
+            <span class="quantity">2 kg + $6.80</span>
+        </div>
+    </div>
+</body>
+</html>
