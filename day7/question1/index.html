@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Car Rental UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f8f8f8;
+      --text-color: #333;
+      --card-bg: #fff;
+      --primary-color: #6c47ff;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --card-bg: #1e1e1e;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card-bg);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: background 0.3s ease;
+    }
+    .search-bar input {
+      padding: 0.75rem;
+      width: 300px;
+      border-radius: 50px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+    .container {
+      display: flex;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .sidebar {
+      width: 250px;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: background 0.3s ease;
+    }
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .sidebar label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar input[type="range"] {
+      width: 100%;
+    }
+    .main-content {
+      flex: 1;
+    }
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .filters select, .filters input {
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      transition: border-color 0.3s ease;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .car-card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .car-card img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+    .car-card:hover img {
+      transform: scale(1.05);
+    }
+    .car-card h4 {
+      margin: 0.5rem 0;
+      font-weight: 600;
+    }
+    .car-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .car-card button {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .car-card button:hover {
+      background: #5836d4;
+    }
+    .car-card .price {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .toggle-theme {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary-color);
+      color: white;
+      transition: background 0.3s ease;
+    }
+    .toggle-theme:hover {
+      background: #5836d4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🚗</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search any car here" />
+    </div>
+    <div>
+      <button class="toggle-theme">Toggle Theme</button>
+    </div>
+  </header>
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Type</h3>
+      <label><input type="checkbox" class="filter" data-type="Sport" checked /> Sport</label>
+      <label><input type="checkbox" class="filter" data-type="SUV" /> SUV</label>
+      <label><input type="checkbox" class="filter" data-type="MPV" /> MPV</label>
+      <label><input type="checkbox" class="filter" data-type="Sedan" /> Sedan</label>
+      <label><input type="checkbox" class="filter" data-type="Coupe" /> Coupe</label>
+      <label><input type="checkbox" class="filter" data-type="Hatchback" /> Hatchback</label>
+      <h3>Capacity</h3>
+      <label><input type="checkbox" class="filter" data-capacity="2" checked /> 2 Person</label>
+      <label><input type="checkbox" class="filter" data-capacity="4" /> 4 Person</label>
+      <label><input type="checkbox" class="filter" data-capacity="6" /> 6 Person</label>
+      <label><input type="checkbox" class="filter" data-capacity="8" /> 8 or More</label>
+      <h3>Price</h3>
+      <input type="range" min="0" max="200" id="priceRange" />
+      <p>Max. $<span id="priceValue">200.00</span></p>
+    </aside>
+    <main class="main-content">
+      <div class="filters">
+        <select><option>Pick-Up Location</option></select>
+        <input type="date" />
+        <input type="time" />
+        <select><option>Drop-Off Location</option></select>
+        <input type="date" />
+        <input type="time" />
+        <button>🔄</button>
+      </div>
+      <div class="car-grid">
+        <div class="car-card">
+          <img src="img/Nissan-GT-R.avif" alt="Car" />
+          <h4>Nissan GT - R</h4>
+          <p>Sport</p>
+          <p class="price">$80.00/day</p>
+          <button>Rent Now</button>
+        </div>
+        <div class="car-card">
+          <img src="./img/Rolls-Royce.jpg" alt="Car" />
+          <h4>Rolls - Royce</h4>
+          <p>Sedan</p>
+          <p class="price">$96.00/day</p>
+          <button>Rent Now</button>
+        </div>
+        <!-- Add more car-card divs for other cars -->
+        <div class="car-card">
+          <img src="./img/BMW x5.jpg" alt="Car" />
+          <h4>BMW X5</h4>
+          <p>SUV</p>
+          <p class="price">$120.00/day</p>
+          <button>Rent Now</button>
+        </div>
+        <div class="car-card">
+          <img src="./img/Mercedes-Benz_class.jpg" alt="Car" />
+          <h4>Mercedes-Benz C-Class</h4>
+          <p>Sedan</p>
+          <p class="price">$110.00/day</p>
+          <button>Rent Now</button>
+        </div>
+        <div class="car-card">
+          <img src="./img/corolla.jpg" alt="Car" />
+          <h4>Toyota Corolla</h4>
+          <p>Sedan</p>
+          <p class="price">$70.00/day</p>
+          <button>Rent Now</button>  
+        </div>
+        <div class="car-card">
+          <img src="./img/Honda_Accord.jpg" alt="Car" />
+          <h4>Honda Accord</h4>
+          <p>Sedan</p>
+          <p class="price">$75.00/day</p>
+          <button>Rent Now</button>
+        </div>
+        <div class="car-card">
+          <img src="./img/Ford_Mustang_GT_5.0.jpg" alt="Car" />
+          <h4>Ford Mustang</h4>
+          <p>Sport</p>
+          <p class="price">$85.00/day</p>
+          <button>Rent Now</button>
+        </div>  
+        <div class="car-card">
+          <img src="./img/Audi_A3.jpg" alt="Car" />
+          <h4>Audi A3</h4>
+          <p>Sedan</p>
+          <p class="price">$100.00/day</p>
+          <button>Rent Now</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
